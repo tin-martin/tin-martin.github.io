@@ -1,156 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
-<script src="main.js"></script>
+
 </head>
 <body>
+<h1>F***</h1>
+<canvas id="myCanvas" width="500" height="500" style="border:0px solid #000000;"></canvas>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var socket = io();
+const c = document.getElementById('myCanvas');
+const ctx = c.getContext('2d');
+let d = "";
+//requests rect information
+document.addEventListener('keydown', (e) => {
+    switch(e.keyCode){
+    //////PLAYER 2
+        case 38:
+            //up
+            d = "u";
+            break; 
+        case 40:
+            //down
+            d = "d";
+            break;
+        case 39:
+            //up
+            d = "r";
+            break;
+        case 37:
+            //down
+            d = "l";
+            break;
+    }
+});
+
+function drawRect(x,y){
+    ctx.fillStyle = "white";
+    ctx.fillRect(0,0,c.width,c.height);
+    ctx.fillStyle = "red";
+    ctx.fillRect(x,y,50,50);
+}
+function gameLoop(){
+
+    socket.emit('direction',d);    
+    socket.on('event_b',(msg)=>{
+            drawRect(msg[0],msg[1]);
+        });
+    d="";
+
+    //sends direction to server
+    //server returns direction 
+    //draw rect
+}
+
+i = setInterval(gameLoop,50);
 
 
-<h2 style="text-align:center;font-size:70px">WORDLE</h2>
-
-
-
-<div class="center">
-<div class="grid">
-<div class="square" id="s00">
-    <div class="letter" id="l00">
-        <p> </p>
-    </div>    
-</div>
-
-<div class="square" id="s01">
-    <div class="letter" >
-        <p id="l01"> </p>
-    </div>    
-</div>
-<div class="square" id="s02">
-    <div class="letter">
-        <p id="l02"></p> </p>
-    </div>    
-</div>
-<div class="square" id="s03">
-    <div class="letter">
-        <p id="l03"></p> </p>
-    </div>    
-</div>
-
-<div class="square" id="s10">
-    <div class="letter">
-        <p id="l10"> </p>
-    </div>    
-</div>
-
-
-<div class="square" id="s11">
-    <div class="letter">
-        <p id="l11"> </p>
-    </div>    
-</div>
-
-<div class="square" id="s12">
-    <div class="letter">
-        <p id="l12"> </p>
-    </div>    
-</div>
-<div class="square" id="s13">
-    <div class="letter">
-        <p id="l13"> </p>
-    </div>    
-</div>
-<div class="square" id="s20">
-    <div class="letter">
-        <p id="l20"> </p>
-    </div>    
-</div>
-
-<div class="square" id="s21">
-    <div class="letter">
-        <p id="l21"> </p>
-    </div>    
-</div>
-
-<div class="square" id="s22">
-    <div class="letter">
-        <p id="l22"> </p>
-    </div>    
-</div>
-<div class="square" id="s23">
-    <div class="letter">
-        <p id="l23"> </p>
-    </div>    
-</div>
-<div class="square" id="s30">
-    <div class="letter">
-        <p id="l30"> </p>
-    </div>    
-</div>
-
-<div class="square" id="s31">
-    <div class="letter">
-        <p id="l31"> </p>
-    </div>    
-</div>
-
-<div class="square" id="s32">
-    <div class="letter">
-        <p id="l32"> </p>
-    </div>    
-</div>
-<div class="square" id="s33">
-    <div class="letter">
-        <p id="l33"> </p>
-    </div>    
-</div>
-<div class="square" id="s40">
-    <div class="letter">
-        <p id="l40"> </p>
-    </div>    
-</div>
-
-<div class="square" id="s41">
-    <div class="letter">
-        <p id="l41"> </p>
-    </div>    
-</div>
-
-<div class="square" id="s42">
-    <div class="letter">
-        <p id="l42"> </p>
-    </div>    
-</div>
-<div class="square" id="s43">
-    <div class="letter">
-        <p id="l43"> </p>
-    </div>    
-</div>
-<div class="square" id="s50">
-    <div class="letter">
-        <p id="l50"> </p>
-    </div>    
-</div>
-
-<div class="square" id="s51">
-    <div class="letter">
-        <p id="l51"> </p>
-    </div>    
-</div>
-
-<div class="square" id="s52">
-    <div class="letter">
-        <p id="l52"> </p>
-    </div>    
-</div>
-<div class="square" id="s53">
-    <div class="letter">
-        <p id="l53"> </p>
-    </div>    
-</div>
-
-
-</div>
-</div>
-
+  
+</script>
 </body>
-</html> 
+</html>
