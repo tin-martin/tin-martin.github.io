@@ -1,0 +1,180 @@
+button{
+    outline:none;
+    border:none;
+}
+.time{
+
+    position: absolute;
+    width: 115px;
+    height: 30px;
+    left: 1065px;
+    top: 15px;
+    
+    background: #2B1334;
+    border-radius: 30px 0px;
+
+}
+.bigBox{
+    position: relative;
+    width: 750px;
+    height: 400px;
+    margin:auto;
+    top:100px;
+   
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sideBar{
+    width: 50px;
+    height: 300px;
+    border-radius: 20px;
+   
+}
+
+.dot{
+    height:50px;
+    width:50px;
+    background: #2B1334;
+    border-radius:50%;
+    display:block;
+    left:50%;
+    margin-bottom:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+}
+/*
+.workedTimeDisplay{
+    position: absolute;
+    
+    width: 50px;
+    height: 166px;
+    background: #2B1334;
+
+    border-radius: 50px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+    font-family: 'Rajdhani';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 31px;
+}
+*/
+
+.box{
+    /* 1512*982 */
+    position: relative;
+    width: 630px;
+    height: 400px;
+   
+    
+    background: #2B1334;
+    border-radius: 20px;
+
+
+ 
+}
+
+.statusBar{
+    background:purple;
+    position: absolute;
+    width: 600px;
+    height: 5px;
+    left:50%;
+    margin:0 0 0 -300px;
+    top:10px;
+    border-radius: 50px 50px 0px 0px;
+    
+}
+.bar{
+    
+    width: 630px;
+    height: 36px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin:-18px 0 0 -315px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.bar-btn{
+    display:inline-block;
+    width: 190px;
+    height: 36px;
+   
+   margin-right:7.5px;
+   margin-left:7.5px;
+ 
+    background: rgba(219, 51, 51, 0.49);
+    line-height: 0px;
+    text-align:center;
+
+    font-family: 'Rajdhani';
+    color:white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.display{
+    display:block;
+    position: absolute;
+   
+    width: 450px;
+    height: 200px;
+    
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -225px;
+
+    text-align:center;
+    font-family: 'Rajdhani';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 180px;
+    
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+}
+
+.bottom{
+    left:50%;
+    top:85%;
+    position: absolute;
+    width: 630px;
+    height: 70px;
+
+    margin: -35px 0 0 -315px;
+    border-radius: 15px;
+ 
+    display:flex;
+    justify-content:space-evenly;
+    
+}
+.pp{
+    width: 100px;
+    height: 70px;
+    
+    border-radius: 15px;
+    margin-right:15px;
+  
+
+}
+
+
