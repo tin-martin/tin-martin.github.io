@@ -1,59 +1,156 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
-    <style> @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap'); </style>
-    <link rel="stylesheet" href="style.css">
-   
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="main.js"></script>
 </head>
-<body style="background:#666FB7;">
-    <!--background:#666FB7; background-image:'a.jpg';-->
-    <!--<div class="time"></div>-->
-    <div class="bigBox">
-        <div class="box">
-            <div class="statusBar" id="statusBar">
-                <div id="inner-statusBar" style="background:white;height:5px;width:100%;border-radius: 50px 50px 0px 0px;"></div>
-            </div>
-            
-            <div class="bar">
-                <button id="pomo" onclick="pomo()" class="bar-btn" style="border-radius: 0px 0px 0px 10px;"><p>pomo</p></button>
-                <button id="short" onclick="short()" class="bar-btn"><p>short break</p></button>
-                <button id="long" onclick="long()" class="bar-btn" style="border-radius: 0px 0px 10px 0px;"><p>long break</p></button>
-            </div>
-            <div class="display">
-                <p id="display" style="color:white; width:'500px'; height:'100px'; letter-spacing:0.001px;"></p>
-            </div>
-            <div class="bottom">
-                <div class="pp"></div>
-                <button class="pp" onclick="start()" style="background: rgba(109, 58, 58, 0.49); width:220px; display:flex; justify-content:center; align-items:center; ">
-                    <img id="play-pause" src="/images/play.svg" style="width:40px; height:40px; ">
-                </button>
-                <div class="pp" style=" display:flex; justify-content:center; align-items:center;  ">
-                    <button id="next" onclick="next()" style="background: #2B1334; width:40px; height:40px;  display:flex; justify-content:center; align-items:center; ">
-                        <img src="/images/next.svg" style="width:40px; height:40px; ">
-                    </button>
-                </div>
-            </div>
+<body>
 
-        </div>
-        <div class="sideBar">
-            <button class="dot" onclick="settings()">
-                <img src="settings.svg" style="width:35px; height:35px; ">
-            </button>
-            <button class="dot" onclick="hide()">
-                <img id="hide-show" src="/images/invisible.svg" style="width:35px; height:35px; ">
-            </button>
-           <!-- <div class="workedTimeDisplay">
-                <p>2 <br>hr</br> <br>30</br> <br>min</br></p>
-            </div>
-            -->
-        </div>
-    </div>
-    <img src="/images/pomoe.svg" style="position: fixed;
-    width: 200px;
-    height: 200px;
-    left: 25px;
-    top: 560px;">
-    
-    <script src="script.js"></script>
+
+<h2 style="text-align:center;font-size:70px">WORDLE</h2>
+
+
+
+<div class="center">
+<div class="grid">
+<div class="square" id="s00">
+    <div class="letter" id="l00">
+        <p> </p>
+    </div>    
+</div>
+
+<div class="square" id="s01">
+    <div class="letter" >
+        <p id="l01"> </p>
+    </div>    
+</div>
+<div class="square" id="s02">
+    <div class="letter">
+        <p id="l02"></p> </p>
+    </div>    
+</div>
+<div class="square" id="s03">
+    <div class="letter">
+        <p id="l03"></p> </p>
+    </div>    
+</div>
+
+<div class="square" id="s10">
+    <div class="letter">
+        <p id="l10"> </p>
+    </div>    
+</div>
+
+
+<div class="square" id="s11">
+    <div class="letter">
+        <p id="l11"> </p>
+    </div>    
+</div>
+
+<div class="square" id="s12">
+    <div class="letter">
+        <p id="l12"> </p>
+    </div>    
+</div>
+<div class="square" id="s13">
+    <div class="letter">
+        <p id="l13"> </p>
+    </div>    
+</div>
+<div class="square" id="s20">
+    <div class="letter">
+        <p id="l20"> </p>
+    </div>    
+</div>
+
+<div class="square" id="s21">
+    <div class="letter">
+        <p id="l21"> </p>
+    </div>    
+</div>
+
+<div class="square" id="s22">
+    <div class="letter">
+        <p id="l22"> </p>
+    </div>    
+</div>
+<div class="square" id="s23">
+    <div class="letter">
+        <p id="l23"> </p>
+    </div>    
+</div>
+<div class="square" id="s30">
+    <div class="letter">
+        <p id="l30"> </p>
+    </div>    
+</div>
+
+<div class="square" id="s31">
+    <div class="letter">
+        <p id="l31"> </p>
+    </div>    
+</div>
+
+<div class="square" id="s32">
+    <div class="letter">
+        <p id="l32"> </p>
+    </div>    
+</div>
+<div class="square" id="s33">
+    <div class="letter">
+        <p id="l33"> </p>
+    </div>    
+</div>
+<div class="square" id="s40">
+    <div class="letter">
+        <p id="l40"> </p>
+    </div>    
+</div>
+
+<div class="square" id="s41">
+    <div class="letter">
+        <p id="l41"> </p>
+    </div>    
+</div>
+
+<div class="square" id="s42">
+    <div class="letter">
+        <p id="l42"> </p>
+    </div>    
+</div>
+<div class="square" id="s43">
+    <div class="letter">
+        <p id="l43"> </p>
+    </div>    
+</div>
+<div class="square" id="s50">
+    <div class="letter">
+        <p id="l50"> </p>
+    </div>    
+</div>
+
+<div class="square" id="s51">
+    <div class="letter">
+        <p id="l51"> </p>
+    </div>    
+</div>
+
+<div class="square" id="s52">
+    <div class="letter">
+        <p id="l52"> </p>
+    </div>    
+</div>
+<div class="square" id="s53">
+    <div class="letter">
+        <p id="l53"> </p>
+    </div>    
+</div>
+
+
+</div>
+</div>
+
 </body>
-</html>
+</html> 
